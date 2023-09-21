@@ -5,9 +5,16 @@ const pictureInputElement = formElement.querySelector("#picture");
 const javascriptInputElement = formElement.querySelector("#javascript");
 const sufferingInputElement = formElement.querySelector("#suffering");
 
+setName = (name) => {
+  document.querySelector("h2").classList.remove("off");
+  document.querySelector(".name").textContent = name;
+  document.querySelector("img").setAttribute("alt", name);
+};
+
 formElement.addEventListener("change", (event) => {
   switch (event.target) {
     case nameInputElement:
+      setName(event.target.value);
       // Invoca a la función para poner el nombre
       break;
     case birthdateInputElement:
